@@ -1,0 +1,72 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: srv-access-mgmt
+  # 기본 활성 프로파일 (실행 시 --spring.profiles.active=xxx 로 변경 가능)
+  profiles:
+    active: dev
+  # JSP ViewResolver 설정
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  # 메일 발송 (iBiz SMTP 서버 참고)
+  # 사내 SMTP 는 화이트리스트 IP 무인증 릴레이 방식 → 인증 사용 안 함
+  mail:
+    host: smtp.inzent.com
+    port: 25
+    default-encoding: UTF-8
+    properties:
+      mail.smtp.auth: false
+      mail.smtp.connectiontimeout: 5000
+      mail.smtp.timeout: 5000
+      mail.smtp.writetimeout: 5000
+
+# MyBatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.sram.dto
+  configuration:
+    map-underscore-to-camel-case: true   # emp_name -> empName
+    jdbc-type-for-null: 'NULL'
+
+logging:
+  level:
+    com.example.sram.mapper: debug       # 실행 SQL 로그
+
+# 연락처 암호화 키 (운영에서는 반드시 환경변수 CRYPTO_SECRET 로 주입)
+app:
+  crypto:
+    secret: ${CRYPTO_SECRET:sram-dev-secret-change-me}
+
+---
+# === dev 프로파일 (개발 DB) ===
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_URL:jdbc:postgresql://192.168.21.20:35432/ibiz_dev}
+    username: ${DB_USERNAME:ibiz}
+    password: ${DB_PASSWORD:ibiz1229}
+    hikari:
+      maximum-pool-size: 10
+      pool-name: sram-pool
+
+---
+# === local 프로파일 (로컬 DB) ===
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/sram}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    hikari:
+      maximum-pool-size: 10
+      pool-name: sram-pool

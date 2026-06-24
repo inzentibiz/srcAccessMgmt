@@ -1,0 +1,628 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-06-24T02:26:35.535Z",
+  "activeFeatures": [
+    "sram",
+    "dto",
+    "mapper",
+    "service",
+    "controller",
+    "js",
+    "scratchpad",
+    "event"
+  ],
+  "primaryFeature": "Srv_Access_Mgmt",
+  "features": {
+    "Srv_Access_Mgmt": {
+      "phase": "archived",
+      "phaseNumber": 3,
+      "matchRate": 71,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-06-23T06:40:06.941Z",
+        "lastUpdated": "2026-06-24T01:48:27.000Z"
+      },
+      "lastFile": "D:\\Git_Srv_Access_Mgmt_Web\\Srv_Access_Mgmt\\restart.bat",
+      "archivedTo": "docs/archive/2026-06/Srv_Access_Mgmt/",
+      "archivedAt": "2026-06-24T01:48:27.000Z"
+    },
+    "sram": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-06-23T06:42:54.463Z",
+        "lastUpdated": "2026-06-24T01:30:46.497Z"
+      },
+      "lastFile": "D:\\Git_Srv_Access_Mgmt_Web\\Srv_Access_Mgmt\\src\\main\\java\\com\\example\\sram\\SramApplication.java"
+    },
+    "dto": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-06-23T06:43:09.383Z",
+        "lastUpdated": "2026-06-23T07:27:21.077Z"
+      },
+      "lastFile": "D:\\Git_Srv_Access_Mgmt_Web\\Srv_Access_Mgmt\\src\\main\\java\\com\\example\\sram\\dto\\AccessLogRequest.java"
+    },
+    "mapper": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-06-23T06:43:47.205Z",
+        "lastUpdated": "2026-06-23T07:28:15.927Z"
+      },
+      "lastFile": "D:\\Git_Srv_Access_Mgmt_Web\\Srv_Access_Mgmt\\src\\main\\java\\com\\example\\sram\\mapper\\AccessLogMapper.java"
+    },
+    "service": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-06-23T06:43:58.084Z",
+        "lastUpdated": "2026-06-24T01:29:37.846Z"
+      },
+      "lastFile": "D:\\Git_Srv_Access_Mgmt_Web\\Srv_Access_Mgmt\\src\\main\\java\\com\\example\\sram\\service\\AccessLogService.java"
+    },
+    "controller": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-06-23T06:44:31.110Z",
+        "lastUpdated": "2026-06-24T01:30:27.223Z"
+      },
+      "lastFile": "D:\\Git_Srv_Access_Mgmt_Web\\Srv_Access_Mgmt\\src\\main\\java\\com\\example\\sram\\controller\\AccessApiController.java"
+    },
+    "js": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-06-23T06:47:01.479Z",
+        "lastUpdated": "2026-06-23T23:26:17.766Z"
+      },
+      "lastFile": "D:\\Git_Srv_Access_Mgmt_Web\\Srv_Access_Mgmt\\src\\main\\resources\\static\\js\\user.js"
+    },
+    "scratchpad": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-06-23T08:02:09.070Z",
+        "lastUpdated": "2026-06-24T02:26:35.535Z"
+      },
+      "lastFile": "C:\\Users\\장석원\\AppData\\Local\\Temp\\claude\\D--Git-Srv-Access-Mgmt-Web-Srv-Access-Mgmt\\3fb1351d-a29a-421c-a41f-ef25e75b969d\\scratchpad\\DbDelete.java"
+    },
+    "event": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-06-24T01:28:48.431Z",
+        "lastUpdated": "2026-06-24T01:28:48.431Z"
+      },
+      "lastFile": "D:\\Git_Srv_Access_Mgmt_Web\\Srv_Access_Mgmt\\src\\main\\java\\com\\example\\sram\\event\\AccessRequestedEvent.java"
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-06-23T06:37:32.943Z",
+    "onboardingCompleted": false,
+    "lastActivity": "2026-06-24T02:26:35.535Z"
+  },
+  "history": [
+    {
+      "timestamp": "2026-06-23T06:40:06.941Z",
+      "feature": "Srv_Access_Mgmt",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:42:54.463Z",
+      "feature": "sram",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:43:09.383Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:43:18.721Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:43:25.963Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:43:32.570Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:43:38.281Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:43:47.205Z",
+      "feature": "mapper",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:43:58.084Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:44:06.185Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:44:11.202Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:44:16.531Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:44:22.263Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:44:31.110Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:44:42.452Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:44:52.293Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:45:57.013Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:46:04.371Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:47:01.479Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:47:15.313Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T06:47:30.274Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:04:57.000Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:05:01.770Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:05:06.699Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:05:12.098Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:05:17.094Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:05:22.518Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:06:06.524Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:09:00.155Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:09:05.620Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:09:11.844Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:09:18.737Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:09:38.566Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:09:45.784Z",
+      "feature": "mapper",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:09:57.988Z",
+      "feature": "mapper",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:10:06.198Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:10:17.318Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:10:26.053Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:10:36.053Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:27:21.077Z",
+      "feature": "dto",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:27:24.966Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:28:08.225Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T07:28:15.927Z",
+      "feature": "mapper",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T08:02:09.070Z",
+      "feature": "scratchpad",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T08:04:02.318Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T08:04:24.187Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T08:04:37.238Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T08:05:13.711Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T08:05:23.997Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T23:24:55.482Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T23:25:15.238Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T23:26:17.766Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T23:26:37.776Z",
+      "feature": "scratchpad",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T23:29:38.275Z",
+      "feature": "scratchpad",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T23:39:06.096Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T23:39:30.283Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T23:39:44.627Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-23T23:54:02.288Z",
+      "feature": "Srv_Access_Mgmt",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T00:53:23.310Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T00:53:34.476Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T00:53:51.491Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T00:54:35.366Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T00:57:49.818Z",
+      "feature": "scratchpad",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T00:58:48.552Z",
+      "feature": "scratchpad",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:11:36.863Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:11:49.060Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:11:59.208Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:17:57.022Z",
+      "feature": "scratchpad",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:28:48.431Z",
+      "feature": "event",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:29:04.309Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:29:18.176Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:29:37.846Z",
+      "feature": "service",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:29:53.016Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:30:06.136Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:30:27.223Z",
+      "feature": "controller",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:30:46.497Z",
+      "feature": "sram",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T01:48:27.000Z",
+      "feature": "Srv_Access_Mgmt",
+      "phase": "archived",
+      "action": "archived"
+    },
+    {
+      "timestamp": "2026-06-24T02:14:18.433Z",
+      "feature": "scratchpad",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T02:17:04.394Z",
+      "feature": "scratchpad",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-06-24T02:26:35.535Z",
+      "feature": "scratchpad",
+      "phase": "do",
+      "action": "updated"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.sram.mapper.AccessLogMapper">
+
+    <!-- 공통 컬럼 -->
+    <sql id="cols">
+        id, emp_name, emp_no, phone,
+        reason, access_time, created_at
+    </sql>
+
+    <!-- 검색 조건 (관리자 대시보드) -->
+    <select id="findLogs" parameterType="com.example.sram.dto.AccessSearch"
+            resultType="com.example.sram.dto.AccessLog">
+        SELECT <include refid="cols"/>
+        FROM access_log
+        <where>
+            <if test="startDate != null">
+                AND access_time &gt;= #{startDate}
+            </if>
+            <if test="endDate != null">
+                AND access_time &lt; (#{endDate}::date + INTERVAL '1 day')
+            </if>
+            <if test="keyword != null and keyword != ''">
+                AND (emp_name LIKE '%' || #{keyword} || '%'
+                     OR emp_no LIKE '%' || #{keyword} || '%')
+            </if>
+        </where>
+        ORDER BY access_time DESC
+    </select>
+
+    <!-- 오늘 출입 기록 -->
+    <select id="findTodayLogs" resultType="com.example.sram.dto.AccessLog">
+        SELECT <include refid="cols"/>
+        FROM access_log
+        WHERE access_time &gt;= CURRENT_DATE
+          AND access_time &lt; CURRENT_DATE + INTERVAL '1 day'
+        ORDER BY access_time DESC
+    </select>
+
+    <!-- 단건 조회 -->
+    <select id="findById" parameterType="long" resultType="com.example.sram.dto.AccessLog">
+        SELECT <include refid="cols"/>
+        FROM access_log
+        WHERE id = #{id}
+    </select>
+
+    <!-- 출입 기록 등록 (생성 PK 회수) -->
+    <insert id="insertLog" parameterType="com.example.sram.dto.AccessLogRequest"
+            useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO access_log
+            (emp_name, emp_no, phone, reason, access_time)
+        VALUES
+            (#{empName}, #{empNo}, #{phone}, #{reason}, now())
+    </insert>
+
+    <!-- KPI: 오늘 건수 -->
+    <select id="countToday" resultType="long">
+        SELECT count(*) FROM access_log
+        WHERE access_time &gt;= CURRENT_DATE
+          AND access_time &lt; CURRENT_DATE + INTERVAL '1 day'
+    </select>
+
+    <!-- KPI: 어제 건수 -->
+    <select id="countYesterday" resultType="long">
+        SELECT count(*) FROM access_log
+        WHERE access_time &gt;= CURRENT_DATE - INTERVAL '1 day'
+          AND access_time &lt; CURRENT_DATE
+    </select>
+
+    <!-- KPI: 누적 총 건수 -->
+    <select id="countTotal" resultType="long">
+        SELECT count(*) FROM access_log
+    </select>
+
+</mapper>

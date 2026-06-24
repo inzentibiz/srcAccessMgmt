@@ -1,0 +1,16 @@
+# Maven build output
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# MCP / tooling session artifacts
+.playwright-mcp/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log

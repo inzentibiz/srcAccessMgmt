@@ -1,0 +1,2 @@
+- [Project Overview](project_overview.md) — server room access mgmt (SRAM), Spring Boot 2.7 / Java 11 / MyBatis / PostgreSQL / JSP
+- [Security Constraints](project_security_constraints.md) — known plaintext secrets in application.yml; AES key derivation and access password decisions
