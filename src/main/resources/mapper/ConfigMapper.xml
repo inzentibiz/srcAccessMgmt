@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.sram.mapper.ConfigMapper">
+
+    <!-- 설정값 조회 -->
+    <select id="selectValue" resultType="string">
+        SELECT config_value FROM sram_config WHERE config_key = #{key}
+    </select>
+
+    <!-- 설정 변경 시각 조회 -->
+    <select id="selectUpdatedAt" resultType="java.time.LocalDateTime">
+        SELECT updated_at FROM sram_config WHERE config_key = #{key}
+    </select>
+
+    <!-- 설정값 저장 (upsert) -->
+    <insert id="upsert">
+        INSERT INTO sram_config (config_key, config_value, updated_at)
+        VALUES (#{key}, #{value}, now())
+        ON CONFLICT (config_key)
+        DO UPDATE SET config_value = EXCLUDED.config_value, updated_at = now()
+    </insert>
+
+</mapper>

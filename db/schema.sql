@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS access_log (
     id           BIGINT        GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     emp_name     VARCHAR(50)   NOT NULL,           -- 성명
     emp_no       VARCHAR(20)   NOT NULL,           -- 사번
-    phone        VARCHAR(255),                     -- 연락처 (AES-GCM 암호문 저장: "enc:"+Base64)
+    phone        VARCHAR(255),                     -- 연락처 (AES-GCM 암호문 저장: "enc:"+Base64)ㅣㅣ
     reason       VARCHAR(200)  NOT NULL,           -- 출입 사유
     access_time  TIMESTAMP     NOT NULL DEFAULT now(),    -- 출입(신청) 시각
     created_at   TIMESTAMP     NOT NULL DEFAULT now()
@@ -25,3 +25,17 @@ CREATE TABLE IF NOT EXISTS access_log (
 CREATE INDEX IF NOT EXISTS idx_access_log_time      ON access_log (access_time DESC);
 CREATE INDEX IF NOT EXISTS idx_access_log_emp_no    ON access_log (emp_no);
 CREATE INDEX IF NOT EXISTS idx_access_log_emp_name  ON access_log (emp_name);
+
+-- ---------------------------------------------------------------------
+-- 시스템 설정 (key/value) — 출입 비밀번호 등 관리자 변경 가능 값 저장
+-- ---------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS sram_config (
+    config_key    VARCHAR(50)   PRIMARY KEY,        -- 설정 키 (예: access_password)
+    config_value  VARCHAR(200)  NOT NULL,           -- 설정 값
+    updated_at    TIMESTAMP     NOT NULL DEFAULT now()
+);
+
+-- 출입 비밀번호 기본값
+INSERT INTO sram_config (config_key, config_value)
+VALUES ('access_password', '7325*')
+ON CONFLICT (config_key) DO NOTHING;

@@ -43,6 +43,17 @@
 
   <div style="max-width:760px;margin:0 auto;padding:36px 28px 60px;">
 
+    <!-- 공지사항 배너 -->
+    <c:if test="${not empty notice}">
+      <div style="display:flex;gap:12px;background:oklch(0.97 0.03 95);border:1px solid oklch(0.85 0.08 95);border-radius:14px;padding:16px 20px;margin-bottom:22px;">
+        <div style="font-size:18px;line-height:1.2;">📢</div>
+        <div>
+          <div style="font-size:13px;font-weight:800;color:oklch(0.5 0.12 75);margin-bottom:3px;">공지사항</div>
+          <div style="font-size:14px;color:#5c5a54;line-height:1.6;white-space:pre-wrap;"><c:out value="${notice}"/></div>
+        </div>
+      </div>
+    </c:if>
+
     <!-- 1. 출입 신청 -->
     <div style="margin-bottom:14px;">
       <div style="font-size:22px;font-weight:800;color:#1f1f1d;">출입 신청</div>

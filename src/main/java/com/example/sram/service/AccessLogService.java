@@ -3,6 +3,7 @@ package com.example.sram.service;
 import com.example.sram.dto.*;
 import com.example.sram.event.AccessRequestedEvent;
 import com.example.sram.mapper.AccessLogMapper;
+import com.example.sram.mapper.ConfigMapper;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,13 +20,22 @@ public class AccessLogService {
 
     private static final DateTimeFormatter MAIL_TS = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
+    /** 출입 비밀번호 설정 키 / 기본값 */
+    private static final String KEY_ACCESS_PWD = "access_password";
+    private static final String DEFAULT_ACCESS_PWD = "7325*";
+
+    /** 공지사항 설정 키 */
+    private static final String KEY_NOTICE = "notice";
+
     private final AccessLogMapper mapper;
+    private final ConfigMapper configMapper;
     private final CryptoService crypto;
     private final ApplicationEventPublisher eventPublisher;
 
-    public AccessLogService(AccessLogMapper mapper, CryptoService crypto,
+    public AccessLogService(AccessLogMapper mapper, ConfigMapper configMapper, CryptoService crypto,
                             ApplicationEventPublisher eventPublisher) {
         this.mapper = mapper;
+        this.configMapper = configMapper;
         this.crypto = crypto;
         this.eventPublisher = eventPublisher;
     }
@@ -73,12 +83,40 @@ public class AccessLogService {
         }
     }
 
-    /** 서버실 출입 비밀번호 (고정값) */
-    private static final String ACCESS_PASSWORD = "7325*";
+    /** 현재 서버실 출입 비밀번호 (DB 설정값, 없으면 기본값) */
+    public String getAccessPassword() {
+        String v = configMapper.selectValue(KEY_ACCESS_PWD);
+        return (v == null || v.trim().isEmpty()) ? DEFAULT_ACCESS_PWD : v;
+    }
 
     /** 출입 신청 완료 시 안내할 서버실 출입 비밀번호 */
     public String generateAccessPassword() {
-        return ACCESS_PASSWORD;
+        return getAccessPassword();
+    }
+
+    /** 출입 비밀번호 마지막 변경 시각 (없으면 null) */
+    public LocalDateTime getAccessPasswordUpdatedAt() {
+        return configMapper.selectUpdatedAt(KEY_ACCESS_PWD);
+    }
+
+    /** 공지사항 조회 (없으면 빈 문자열) */
+    public String getNotice() {
+        String v = configMapper.selectValue(KEY_NOTICE);
+        return v == null ? "" : v;
+    }
+
+    /** 공지사항 저장 (빈 값이면 공지 해제) */
+    @Transactional
+    public void updateNotice(String notice) {
+        String v = (notice == null) ? "" : notice.trim();
+        if (v.length() > 200) v = v.substring(0, 200);
+        configMapper.upsert(KEY_NOTICE, v);
+    }
+
+    /** 서버실 출입 비밀번호 변경 (관리자) */
+    @Transactional
+    public void updateAccessPassword(String newPwd) {
+        configMapper.upsert(KEY_ACCESS_PWD, newPwd.trim());
     }
 
     /** 대시보드 KPI */

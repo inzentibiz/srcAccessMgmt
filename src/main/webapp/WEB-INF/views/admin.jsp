@@ -49,6 +49,65 @@
       <div style="font-size:14px;color:#8a8880;margin-top:5px;">서버실 · 실시간 모니터링</div>
     </div>
 
+    <!-- ⚙ 설정 (접기): 출입 비밀번호 · 공지사항 -->
+    <div style="background:#fff;border:1px solid #eae8e3;border-radius:16px;margin-bottom:24px;overflow:hidden;">
+      <div id="settingsToggle" style="display:flex;align-items:center;justify-content:space-between;padding:16px 24px;cursor:pointer;user-select:none;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:18px;">⚙️</span>
+          <div>
+            <div style="font-size:15px;font-weight:800;color:#1f1f1d;">설정</div>
+            <div style="font-size:12px;color:#9a988f;margin-top:2px;">출입 비밀번호 · 공지사항 관리</div>
+          </div>
+        </div>
+        <span id="settingsChevron" style="font-size:13px;font-weight:700;color:oklch(0.5 0.13 255);">펼치기 ▾</span>
+      </div>
+
+      <div id="settingsBody" style="display:none;border-top:1px solid #f0eee9;">
+
+        <!-- 출입 비밀번호 변경 -->
+        <div style="padding:18px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="oklch(0.5 0.13 255)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:#1f1f1d;">서버실 출입 비밀번호</div>
+              <div style="font-size:12px;color:#9a988f;margin-top:2px;">변경하면 이후 출입 신청 안내에 새 비밀번호가 표시됩니다.</div>
+              <div id="pwSince" style="font-size:12px;color:oklch(0.5 0.13 255);font-weight:700;margin-top:4px;"></div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;margin-left:auto;">
+            <input type="text" id="pwInput" placeholder="새 비밀번호 입력" maxlength="200"
+                   style="width:200px;border:1px solid #e2e0db;border-radius:10px;padding:10px 14px;color:#1f1f1d;font-size:15px;font-variant-numeric:tabular-nums;outline:none;">
+            <button type="button" id="pwSaveBtn"
+                    style="background:oklch(0.5 0.13 255);color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;">저장</button>
+            <span id="pwMsg" style="font-size:13px;font-weight:600;"></span>
+          </div>
+        </div>
+
+        <!-- 공지사항 작성 -->
+        <div style="padding:18px 24px;border-top:1px solid #f4f2ee;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:10px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="font-size:18px;">📢</div>
+              <div>
+                <div style="font-size:14px;font-weight:800;color:#1f1f1d;">공지사항</div>
+                <div style="font-size:12px;color:#9a988f;margin-top:2px;">출입 신청 화면 상단에 표시됩니다. (비우고 저장하면 공지 해제)</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span id="noticeMsg" style="font-size:13px;font-weight:600;"></span>
+              <button type="button" id="noticeDeleteBtn"
+                      style="background:#fff;color:#d05;border:1px solid #e7c3cb;border-radius:10px;padding:10px 18px;font-size:14px;font-weight:700;cursor:pointer;">삭제</button>
+              <button type="button" id="noticeSaveBtn"
+                      style="background:oklch(0.5 0.13 255);color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;">저장</button>
+            </div>
+          </div>
+          <textarea id="noticeInput" maxlength="200" rows="2" placeholder="공지 내용을 입력하세요 (최대 200자)"
+                    style="width:100%;border:1px solid #e2e0db;border-radius:10px;padding:12px 14px;color:#1f1f1d;font-size:14px;line-height:1.6;outline:none;resize:vertical;font-family:inherit;"><c:out value="${notice}"/></textarea>
+        </div>
+
+      </div>
+    </div>
+
     <!-- KPI -->
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:24px;">
       <div style="background:#fff;border:1px solid #eae8e3;border-radius:16px;padding:22px 24px;">

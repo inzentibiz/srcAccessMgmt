@@ -40,6 +40,14 @@ logging:
 app:
   crypto:
     secret: ${CRYPTO_SECRET:sram-dev-secret-change-me}
+  # 대시보드(/admin) 접근 허용 사번 목록
+  admin:
+    emp-nos:
+      - "394292"
+      - "394100"
+      - "394092"
+      - "394093"
+      - "394266"
 
 ---
 # === dev 프로파일 (개발 DB) ===

@@ -26,6 +26,7 @@ public class PageController {
     public String userPage(Model model) {
         model.addAttribute("logs", service.todayLogs());
         model.addAttribute("stats", service.stats());
+        model.addAttribute("notice", service.getNotice());
         return "user";   // /WEB-INF/views/user.jsp
     }
 
@@ -35,6 +36,7 @@ public class PageController {
         model.addAttribute("logs", service.search(search));
         model.addAttribute("stats", service.stats());
         model.addAttribute("search", search);
+        model.addAttribute("notice", service.getNotice());
         return "admin";  // /WEB-INF/views/admin.jsp
     }
 }
